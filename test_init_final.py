@@ -1103,14 +1103,14 @@ async def on_message(msg):
 
 			embed = discord.Embed(
 					title = "----- 보스탐 정보 -----",
-					description= "```"+information+"```",
+					description= information,
 					color=0x0000ff
 					)
 			embed.add_field(
 					name="----- 미예약보스 -----",
-					value=str(temp_bossTime1)+"```"
+					value=str(temp_bossTime1)
 					)
-			await client.send_message(client.get_channel(channel), embed=embed, tts=False)
+			await client.send_message(client.get_channel(channel), embed="```"+embed+"```", tts=False)
 
 			await dbSave()
 
